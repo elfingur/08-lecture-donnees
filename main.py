@@ -13,11 +13,17 @@ def read_data(filename):
     Returns:
         list: le contenu du fichier (1 list par ligne)
     """
+    l = []
     with open("listes.csv", 'r', encoding = "utf8") as fichier:
-        l = fichier.readlines()
-        for i in len(l) :
-            l[i] = l[i].split(';')
-    return 
+        ligness = fichier.readlines()
+        for ligne in ligness :
+            element = ligne.strip().split(';')
+            ll = []
+            for chiffre in element :
+                chiffre = chiffre.strip()
+                ll.append(int(chiffre))
+            l.append(ll)
+    return l
 
 def get_list_k(data, k):
     return data[k]
