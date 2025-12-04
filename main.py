@@ -13,27 +13,29 @@ def read_data(filename):
     Returns:
         list: le contenu du fichier (1 list par ligne)
     """
-    l = []
-    return l
+    with open("listes.csv", 'r', encoding = "utf8") as fichier:
+        l = fichier.readlines()
+        for i in len(l) :
+            l[i] = l[i].split(';')
+    return 
 
 def get_list_k(data, k):
-    l = []
-    return l
+    return data[k]
 
 def get_first(l):
-    return None
+    return l[0]
 
 def get_last(l):
-    return None
+    return l[len(l)-1]
 
 def get_max(l):
-    return None
+    return max(l)
 
 def get_min(l):
-    return None
+    return min(l)
 
 def get_sum(l):
-    return None
+    return sum(l)
 
 
 #### Fonction principale
